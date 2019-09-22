@@ -1,7 +1,6 @@
 package com.multimeleon.pjapples.automldemo
 
-
-import android.support.annotation.VisibleForTesting
+import androidx.annotation.VisibleForTesting
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.annotations.SerializedName
@@ -46,7 +45,10 @@ class Network(private val baseUrl: String, enableLog: Boolean) {
 
         val headerAuthorizationInterceptor = Interceptor() {
             var request = it.request()
-            val headers = request.headers().newBuilder().add("Authorization","Bearer Enter Service Account Token here").build()
+            val headers = request.headers().newBuilder().add(
+                "Authorization",
+                "Bearer ya29.GqQBTQYqT73_XMREeuvPS_MOu2QG_SmqJk406Kq16m-0wksM_sw6ngvPncUoq75XA-PUwoTNA4YR3xcqcqgp2CGed3Bxj45IU4bbHU2X8t-XR2jxMjIV8GqEkmHiPd45uNr4EXRKz-VtV5tInoiStjCD_Xtuak1DVe8EjvOUHrFgdCc736Y_CHLkTQoJMVPPN-eAqcllOajFSAP9f-xuOz_LufwOorU"
+            ).build()
             request = request.newBuilder().headers(headers).build()
             return@Interceptor it.proceed(request)
         }
@@ -85,7 +87,7 @@ data class ModelImage (@field:SerializedName("imageBytes") val imageBytes : Stri
 internal interface Endpoint {
 
     @Headers("Content-Type: application/json")
-    @POST("projects/{ProjectName}/locations/us-central1/models/{AutoML_Model_ID}:predict")
+    @POST("projects/botanychecklistdatabase/locations/us-central1/models/ICN5073951862041042671:predict")
     fun classifyImage(@Body body: ModelRequestBody): Call<PayloadResult>
 }
 
