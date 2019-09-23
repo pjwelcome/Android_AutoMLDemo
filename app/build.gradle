@@ -5,6 +5,9 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
+    aaptOptions {
+        noCompress "tflite"
+    }
     compileSdkVersion 29
     defaultConfig {
         applicationId "com.multimeleon.pjapples.automldemo"
@@ -37,4 +40,12 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:2.4.0"
     implementation "com.squareup.okhttp3:logging-interceptor:3.10.0"
 
+    //Firebase
+    implementation 'com.google.firebase:firebase-analytics:17.2.0'
+    //AutoML
+    implementation 'com.google.firebase:firebase-ml-vision:23.0.0'
+    implementation 'com.google.firebase:firebase-ml-vision-automl:18.0.1'
+
+
 }
+apply plugin: 'com.google.gms.google-services'
