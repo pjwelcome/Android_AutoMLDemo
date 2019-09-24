@@ -23,14 +23,20 @@
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"/>
+
     <TextView
-            android:text="Results to appear here"
+            android:id="@+id/result_textview"
             android:layout_width="0dp"
-            android:layout_height="43dp"
-            android:id="@+id/result_textview" app:layout_constraintStart_toStartOf="parent"
+            android:layout_height="0dp"
             android:layout_marginStart="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:layout_marginTop="104dp"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/uploadImageButton" app:layout_constraintVertical_bias="0.0"
-            android:gravity="center"/>
+            android:layout_marginTop="104dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="Results to appear here"
+            app:layout_constraintBottom_toTopOf="@+id/uploadImageButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintVertical_bias="0.0" />
 </android.support.constraint.ConstraintLayout>
