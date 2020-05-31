@@ -73,7 +73,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
     fun imageFromArray(byteArray: ByteArray) {
         val metadata = FirebaseVisionImageMetadata.Builder()
             .setWidth(480) // 480x360 is typically sufficient for
@@ -108,7 +107,6 @@ class MainActivity : AppCompatActivity() {
                 // Task failed with an exception
                 // ...
             }
-
     }
 
     private fun downloadRemoteModel(remoteModel: FirebaseRemoteModel) {
@@ -138,7 +136,6 @@ class MainActivity : AppCompatActivity() {
             }
     }
 
-
     private fun callAutoMLModelRemotely() {
         val conditions = FirebaseModelDownloadConditions.Builder()
             .requireWifi()
@@ -164,7 +161,6 @@ class MainActivity : AppCompatActivity() {
 
                     Toast.makeText(this@MainActivity, "Image Saved!", Toast.LENGTH_SHORT).show()
                     imageView.setImageBitmap(bitmap)
-
 
                     val imgString = Base64.encodeToString(
                         getBytesFromBitmap(bitmap),
@@ -212,6 +208,5 @@ class MainActivity : AppCompatActivity() {
         bitmap.compress(CompressFormat.JPEG, 70, stream)
         return stream.toByteArray()
     }
-
 
 }
